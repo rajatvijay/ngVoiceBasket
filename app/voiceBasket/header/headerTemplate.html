@@ -1,0 +1,12 @@
+<div layout="row" class="vb-header" ng-controller="headerController">
+  <div flex="40" layout="column" layout-align="center">
+    <p>VOICE BASKET</p>
+  </div>
+  <div flex layout="row">
+    <ul layout-padding flex layout="row" layout-align="end" layout-margin>
+      <li ng-repeat="option in menu">
+        <a ng-href="{{ option.link }}">{{ option.name }}</a>
+      </li>
+    </ul>
+  </div>
+</div>

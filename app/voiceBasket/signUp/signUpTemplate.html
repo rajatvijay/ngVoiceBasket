@@ -1,0 +1,26 @@
+<div layout="column" layout-align="center center" ng-controller="signUpController" class="vb-signUp">
+  <h2>Sign Up</h2>
+  <form name="signUpForm" layout="column" ng-submit="singUp()">
+    <md-input-container>
+      <label for="name">Name</label>
+      <input type="text" id="name" ng-model="user.name">
+    </md-input-container>
+    <md-input-container>
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" ng-model="user.companyName">
+    </md-input-container>
+    <md-input-container>
+      <label for="mobile">Mobile</label>
+      <input type="text" id="mobile" ng-model="user.mobile">
+    </md-input-container>
+    <md-input-container>
+      <label for="email">Email</label>
+      <input type="email" id="email" ng-model="user.email">
+    </md-input-container>
+    <md-input-container layout="row" layout-align="center center">
+      <md-button type="submit">
+        Sign Up
+      </md-button>
+    </md-input-container>
+  </form>
+</div>

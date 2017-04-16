@@ -1,0 +1,21 @@
+.vb-header {
+  position: static;
+  padding: 0 5%;
+  box-shadow: 0 0 13px 1px dimgrey;
+
+  p {
+    margin: 0;
+    color: $regular-blue;
+    font-size: 32px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $regular-blue;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+}

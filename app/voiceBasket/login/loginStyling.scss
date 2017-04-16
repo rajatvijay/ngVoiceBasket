@@ -1,0 +1,19 @@
+.vb-login {
+  padding-top: 6%;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: $regular-blue;
+  }
+
+  form {
+    width: 35%;
+  }
+
+  .md-button {
+    @include solid-inverted($regular-blue);
+    font-size: 18px;
+    padding: 0.5% 2%;
+  }
+}

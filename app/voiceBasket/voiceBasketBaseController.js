@@ -1,5 +1,5 @@
-app.controller('voiceBasketBaseController', ['$scope', '$mdDialog', '$mdToast', 'currentSectionTemplate',
-  function ($scope, $mdToast, $mdDialog, currentSectionTemplate) {
+app.controller('voiceBasketBaseController', ['$scope', '$mdDialog', '$mdToast', 'currentSectionTemplate', '$location',
+  function ($scope, $mdToast, $mdDialog, currentSectionTemplate, $location) {
 
     console.log('voiceBasketBaseController called!');
 
@@ -31,6 +31,10 @@ app.controller('voiceBasketBaseController', ['$scope', '$mdDialog', '$mdToast', 
       );
 
     };
+
+    $scope.goTo = function (path) {
+      $location.path(path);
+    }
 
     $scope.currentTemplate = '/voiceBasket/'.concat(currentSectionTemplate);
 

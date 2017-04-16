@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
+
+$regular-font: 'Ubuntu', sans-serif ;
+$regular-blue: #0591BC;
+
+// Inverted Color border button mixin
+@mixin border-inverted ($color, $hoverColor: white) {
+  border: solid 1px $color;
+  color: $color;
+  &:hover {
+    background-color: $color;
+    color: $hoverColor;
+  }
+}
+
+// Inverted Color solid button mixin
+@mixin solid-inverted ($color, $textColor: white) {
+  background-color: $color;
+  color: $textColor;
+  border: solid 1px $color;
+  &:hover {
+    color: $color;
+    background-color: $textColor;
+  }
+}
+
+body {
+  font-family: $regular-font;
+}
