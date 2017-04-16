@@ -1,0 +1,1 @@
+ng.module('app').constant('BASE_URL', 'starlord.hackerearth.com');

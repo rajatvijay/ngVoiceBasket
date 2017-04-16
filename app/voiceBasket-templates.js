@@ -1,0 +1,2 @@
+angular.module("app").run(["$templateCache", function($templateCache) {$templateCache.put("/voiceBasket/base.html","<div id=loading-bar-spinner><div class=bar><div class=peg></div></div></div><div layout=column><ng-include src=currentTemplate></ng-include></div>");
+$templateCache.put("/voiceBasket/home/homeTemplate.html","This is home template");}]);
