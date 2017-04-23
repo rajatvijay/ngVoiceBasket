@@ -9,5 +9,9 @@
     this.login = function (loginPayload) {
       return api.put(endPoints.user, {data: loginPayload});
     };
+
+    this.getDashboardData = function () {
+      return api.get(endPoints.dashboard);
+    };
   }
 })();

@@ -1,3 +1,7 @@
-<div>
-  This is the dashboard
+<div ng-controller="dashboardController" layout="column">
+
+  <!-- TODO: Needs a proper wire-frame -->
+  <div ng-repeat="request in dashboardData.artistRequest">
+    {{ request.request.scriptText }}
+  </div>
 </div>

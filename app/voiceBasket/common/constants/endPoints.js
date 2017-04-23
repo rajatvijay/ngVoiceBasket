@@ -1,3 +1,4 @@
 app.constant('endPoints', {
-  user: 'account/user'
+  user: 'account/user',
+  dashboard: 'account/dashboard'
 });

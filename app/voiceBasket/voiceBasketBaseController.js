@@ -1,6 +1,6 @@
 app.controller('voiceBasketBaseController', ['$scope', '$mdToast', '$mdDialog',
-'currentSectionTemplate', '$location',
-  function ($scope, $mdToast, $mdDialog, currentSectionTemplate, $location) {
+'currentSectionTemplate', '$location', 'currentUser',
+  function ($scope, $mdToast, $mdDialog, currentSectionTemplate, $location, currentUser) {
 
     // WRAPPER TO AVOID SERVICE DI IN CHILD CONTROLLERS
     $scope.showToast = function (message, position, duration) {
@@ -36,5 +36,7 @@ app.controller('voiceBasketBaseController', ['$scope', '$mdToast', '$mdDialog',
     }
 
     $scope.currentTemplate = '/voiceBasket/'.concat(currentSectionTemplate);
+
+    $scope.isLoggedIn = currentUser.isLoggedIn();
 
   }]);
