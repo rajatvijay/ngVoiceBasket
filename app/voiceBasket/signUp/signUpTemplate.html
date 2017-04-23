@@ -1,6 +1,6 @@
 <div layout="column" layout-align="center center" ng-controller="signUpController" class="vb-signUp">
   <h2>Sign Up</h2>
-  <form name="signUpForm" layout="column" ng-submit="singUp()">
+  <form name="signUpForm" layout="column" ng-submit="signUp()">
     <md-input-container>
       <label for="name">Name</label>
       <input type="text" id="name" ng-model="user.name">
@@ -17,8 +17,12 @@
       <label for="email">Email</label>
       <input type="email" id="email" ng-model="user.email">
     </md-input-container>
+    <md-input-container>
+      <label for="password">Password</label>
+      <input type="password" id="password" ng-model="user.password">
+    </md-input-container>
     <md-input-container layout="row" layout-align="center center">
-      <md-button type="submit">
+      <md-button ng-click="signUp()">
         Sign Up
       </md-button>
     </md-input-container>

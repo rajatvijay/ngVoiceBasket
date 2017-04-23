@@ -41,6 +41,16 @@ app.config(['$routeProvider', '$locationProvider',
           }
         }
       })
+      .when('/dashboard', {
+        controller: 'voiceBasketBaseController',
+        templateUrl: '/voiceBasket/base.html',
+        title: 'Dashboard',
+        resolve: {
+          currentSectionTemplate: function () {
+            return 'dashboard/dashboardTemplate.html';
+          }
+        }
+      })
     $locationProvider.html5Mode({
       enabled: true
     });

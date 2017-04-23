@@ -1,3 +1,3 @@
-app.constant('endpoints', {
-
+app.constant('endPoints', {
+  user: 'account/user'
 });

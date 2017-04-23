@@ -1,7 +1,6 @@
-app.controller('voiceBasketBaseController', ['$scope', '$mdDialog', '$mdToast', 'currentSectionTemplate', '$location',
+app.controller('voiceBasketBaseController', ['$scope', '$mdToast', '$mdDialog',
+'currentSectionTemplate', '$location',
   function ($scope, $mdToast, $mdDialog, currentSectionTemplate, $location) {
-
-    console.log('voiceBasketBaseController called!');
 
     // WRAPPER TO AVOID SERVICE DI IN CHILD CONTROLLERS
     $scope.showToast = function (message, position, duration) {
