@@ -23,6 +23,12 @@ ng.module('app').provider('session', [
           auth_token: function() {
             return cache('auth.token') ;
           },
+          setNextStep: function (path) {
+            cache('next.step', path);
+          },
+          getNextStep: function () {
+            return cache('next.step');
+          },
           purgeList: function(_cachedItems) {
             angular.forEach(_cachedItems, function (item) {
               cache.remove(item) ;

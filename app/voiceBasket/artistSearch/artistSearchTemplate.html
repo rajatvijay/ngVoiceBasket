@@ -1,0 +1,36 @@
+<div ng-controller="artistSearchController" layout="column" class="vb-search">
+  <h1>Search An Artist</h1>
+
+  <!-- Search Artist -->
+  <div layout="row" layout-align="center center" layout-padding layout-margin class="vb-search-bar">
+    <md-input-container ng-repeat="(filterType, filterItems) in filters">
+      <label for="filter" style="color: #000;">{{ filterType | camelCaseToSpace | uppercase }}</label>
+      <md-select id="filter" ng-model="selectedFilter[filterType]">
+        <md-option  ng-value="filter" ng-repeat="filter in filterItems">{{ filter }}</md-option>
+      </md-select>
+    </md-input-container>
+  </div>
+
+  <!-- Resulted Artists -->
+  <div layout="column" layout-align="center center" class="vb-search-result">
+    <md-checkbox ng-repeat="audio in audios" ng-model="selectedAudios[audio.id]">
+      <div layout="column">
+        <audio controls>
+          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+          Your browser does not support the audios.
+        </audio>
+       <div layout="row" layout-align="space-between center">
+         <p>{{ audio.artist.name }}</p>
+         <p>{{ audio.audioClip.voiceOverType }}</p>
+       </div>
+      </div>
+    </md-checkbox>
+  </div>
+
+  <!-- Go to next step -->
+  <div layout="row" layout-align="center center">
+    <md-button ng-click="goToRAQ()">
+      Request a Quote
+    </md-button>
+  </div>
+</div>

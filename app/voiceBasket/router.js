@@ -11,13 +11,23 @@ app.config(['$routeProvider', '$locationProvider',
           }
         }
       })
-      .when('/book', {
+      .when('/raq', {
         controller: 'voiceBasketBaseController',
         templateUrl: '/voiceBasket/base.html',
-        title: 'Book An Artist',
+        title: 'Request a Quote',
         resolve: {
           currentSectionTemplate: function () {
-            return 'book/bookTemplate.html';
+            return 'artistRequest/artistRequestTemplate.html';
+          }
+        }
+      })
+      .when('/search', {
+        controller: 'voiceBasketBaseController',
+        templateUrl: '/voiceBasket/base.html',
+        title: 'Search An Artist',
+        resolve: {
+          currentSectionTemplate: function () {
+            return 'artistSearch/artistSearchTemplate.html';
           }
         }
       })

@@ -1,0 +1,110 @@
+<div ng-controller="artistRequestController" layout="column" layout-align="center center" class="vb-raq">
+  <h1>Request A Quote</h1>
+  <form name="requestForm" ng-submit="submit()" layout="column">
+    <!-- Type -->
+    <md-input-container>
+      <label for="type">Type</label>
+      <md-select id="type" ng-model="request.type">
+        <md-option ng-repeat="type in types" ng-value="type">{{ type }}</md-option>
+      </md-select>
+    </md-input-container>
+
+   <div layout="row" layout-align="space-between center">
+     <!-- language -->
+     <md-input-container layout="row" layout-align="space-between center">
+       <p><strong>Language</strong></p>
+       <p ng-bind="selectedAudios[0].audioClip.language"></p>
+     </md-input-container>
+
+     <!-- Vo type -->
+     <md-input-container layout="row">
+       <p><strong>Voice Over Type</strong></p>
+       <p ng-bind="selectedAudios[0].audioClip.voiceOverType"></p>
+     </md-input-container>
+   </div>
+
+    <!-- vo sample -->
+    <md-input-container layout="column" layout-align="space-between center">
+      <div ng-repeat="audio in selectedAudios" layout="row" layout-align="space-between center">
+        <p><strong>Artist Code</strong></p>
+        <p ng-bind="audio.audioClip.code"></p>
+      </div>
+    </md-input-container>
+
+    <!-- Name of the book -->
+    <md-input-container ng-if="request.type === 'Audio-books'">
+      <label for="bookName">Name of the book</label>
+      <input id="bookName" type="text" ng-model="request.bookName">
+    </md-input-container>
+
+    <!-- No of Characters -->
+    <md-input-container ng-if="request.type === 'Commercial'">
+      <label for="chars">No of Characters</label>
+      <input id="chars" type="number" ng-model="charactersCount">
+    </md-input-container>
+
+    <!-- No of Messages -->
+    <md-input-container ng-if="request.type === 'IVR'">
+      <label for="messagesCount">No of Messages</label>
+      <input id="messagesCount" type="number" ng-model="request.messagesCount">
+    </md-input-container>
+
+    <!-- Artist Allocation -->
+    <div layout="column" ng-if="request.type === 'Commercial'">
+      <p>Artist Allocation</p>
+      <md-input-container ng-repeat="num in range(charactersCount)">
+        <label for="charsAlloc">Character {{ num + 1 }}</label>
+        <md-select id="charsAlloc" ng-model="request.characters[num]">
+          <md-option ng-repeat="audio in selectedAudios" ng-value="audio.id">{{ audio.artist.name }}</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+
+    <!--&lt;!&ndash; Character Weightage &ndash;&gt;
+    <div layout="column" ng-if="request.type === 'Cartoon / Animation Videos'">
+      <p>Weightage</p>
+      <md-input-container ng-repeat="num in range(charactersCount)">
+        <label for="weight"></label>
+        <input id="weight" ng-model="request.characters[num]">
+      </md-input-container>
+    </div>-->
+
+    <!-- Duration -->
+    <md-input-container>
+      <label for="duration">Duration</label>
+      <input id="duration" type="number" ng-model="request.duration">
+    </md-input-container>
+
+    <!-- Broadcast Type -->
+    <md-input-container ng-if="request.type === 'Commercial'">
+      <label for="broadcast">Broadcast Type</label>
+      <md-select id="broadcast" ng-model="request.broadCastType">
+        <md-option ng-repeat="type in ['TV', 'Radio']" ng-value="type">{{ type }}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <!-- Script -->
+    <md-input-container>
+      <label for="scriptText">Copy/Paste Script</label>
+      <textarea id="scriptText" ng-model="request.scriptText"></textarea>
+    </md-input-container>
+
+    <!-- Script Url -->
+    <md-input-container>
+      <label for="scriptUrl">Upload Script Url</label>
+      <input type="url" id="scriptUrl" ng-model="request.scriptUrl">
+    </md-input-container>
+
+    <!-- Notes -->
+    <md-input-container>
+      <label for="notes">ADD NOTES FOR ARTIST (DIRECTION, TIMINGS, PRONUNCIATION, VIDEO LINKS etc.)</label>
+      <textarea id="notes" ng-model="request.notes"></textarea>
+    </md-input-container>
+
+    <md-input-container layout="row">
+      <md-button ng-click="submit()" flex="100">
+        Request
+      </md-button>
+    </md-input-container>
+  </form>
+</div>
