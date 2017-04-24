@@ -1,7 +1,7 @@
 (function () {
-  app.controller('signUpController', ['$scope', 'accountService', '$location', 'currentUser', controllerFunction]);
+  app.controller('signUpController', ['$scope', 'accountService', '$location', 'currentUser', 'session', controllerFunction]);
 
-  function controllerFunction($scope, accountService, $location, currentUser) {
+  function controllerFunction($scope, accountService, $location, currentUser, session) {
     $scope.user = {};
     $scope.signUp = signUp;
 
@@ -13,7 +13,9 @@
           $scope.showToast('Sign Up successful', 'top');
           currentUser.setUser(response.result);
           currentUser.setToken(response.result.sessionId);
-          $location.path('/dashboard')
+          var path = session.getNextStep() === undefined ? '/dashboard' : session.getNextStep();
+          session.purgeList(['next.step']);
+          $location.path(path);
         } else {
           $scope.showToast(response.message, 'top');
         }
