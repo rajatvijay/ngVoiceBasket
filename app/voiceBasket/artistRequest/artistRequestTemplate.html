@@ -38,27 +38,28 @@
     </md-input-container>
 
     <!-- No of Characters -->
-    <md-input-container ng-if="request.type === 'Commercial'">
-      <label for="chars">No of Characters</label>
-      <input id="chars" type="number" ng-model="charactersCount">
-    </md-input-container>
+    <div layout="column" ng-if="request.type === 'Commercial'">
+      <md-input-container>
+        <label for="chars">No of Characters</label>
+        <input id="chars" type="number" ng-model="charactersCount">
+      </md-input-container>
+      <!-- Artist Allocation -->
+      <div ng-show="charactersCount !== 0" layout="column">
+        <p>Artist Allocation</p>
+        <md-input-container ng-repeat="num in range(charactersCount)">
+          <label for="charsAlloc">Character {{ num + 1 }}</label>
+          <md-select id="charsAlloc" ng-model="request.characters[num]">
+            <md-option ng-repeat="audio in selectedAudios" ng-value="audio.id">{{ audio.artist.name }}</md-option>
+          </md-select>
+        </md-input-container>
+      </div>
+    </div>
 
     <!-- No of Messages -->
     <md-input-container ng-if="request.type === 'IVR'">
       <label for="messagesCount">No of Messages</label>
       <input id="messagesCount" type="number" ng-model="request.messagesCount">
     </md-input-container>
-
-    <!-- Artist Allocation -->
-    <div layout="column" ng-if="request.type === 'Commercial'">
-      <p>Artist Allocation</p>
-      <md-input-container ng-repeat="num in range(charactersCount)">
-        <label for="charsAlloc">Character {{ num + 1 }}</label>
-        <md-select id="charsAlloc" ng-model="request.characters[num]">
-          <md-option ng-repeat="audio in selectedAudios" ng-value="audio.id">{{ audio.artist.name }}</md-option>
-        </md-select>
-      </md-input-container>
-    </div>
 
     <!--&lt;!&ndash; Character Weightage &ndash;&gt;
     <div layout="column" ng-if="request.type === 'Cartoon / Animation Videos'">

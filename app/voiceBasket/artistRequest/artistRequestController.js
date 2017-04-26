@@ -16,11 +16,14 @@
       'IVR',
     ]
     $scope.range = range;
-    $scope.submit = submit
+    $scope.submit = submit;
+    $scope.charactersCount = 0;
 
     //========================================//
 
     function range(number) {
+      console.log('Range called!')
+      console.log(_.range(parseInt(number)))
       return _.range(parseInt(number));
     }
 
