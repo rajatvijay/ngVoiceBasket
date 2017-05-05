@@ -3,12 +3,13 @@
 
   <!-- Search Artist -->
   <div layout="row" layout-align="center center" layout-padding layout-margin class="vb-search-bar">
-    <md-input-container ng-repeat="(filterType, filterItems) in filters">
-      <label for="filter" style="color: #000;">{{ filterType | camelCaseToSpace | uppercase }}</label>
-      <md-select id="filter" ng-model="selectedFilter[filterType]">
-        <md-option  ng-value="filter" ng-repeat="filter in filterItems">{{ filter }}</md-option>
+    <md-input-container ng-repeat="prop in filtersArray | orderBy: 'key'">
+      <label for="filter" style="color: #000;">{{ prop.key | removeDoubleUnderscores | camelCaseToSpace | uppercase }}</label>
+      <md-select id="filter" ng-model="selectedFilter[renderOptionName('removeDoubleUnderscores', prop.key)]">
+        <md-option ng-value="filter" ng-repeat="filter in prop.val">{{ filter }}</md-option>
       </md-select>
     </md-input-container>
+
   </div>
 
   <!-- Resulted Artists -->
