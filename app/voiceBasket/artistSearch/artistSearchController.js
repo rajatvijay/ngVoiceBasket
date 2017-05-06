@@ -10,6 +10,7 @@
     $scope.selectedAudios = {};
     $scope.goToRAQ = goToRAQ;
     $scope.renderOptionName = renderOptionName;
+    $scope.isDisabled = isDisabled;
 
     //=======================================//
 
@@ -27,6 +28,12 @@
         });
       }
     }, true);
+
+    var enablingFiltersMap = {
+      'gender': 'language',
+      'voiceOverType': 'gender',
+      'ageRange': 'voiceOverType'
+    }
 
     //========================================//
 
@@ -56,6 +63,15 @@
           audios = response.result.artistAudio;
         }
       })
+    }
+
+
+    function isDisabled(filterName) {
+      if(filterName === 'language') {
+        return false;
+      } else {
+        return $scope.selectedFilter[enablingFiltersMap[filterName]] === undefined;
+      }
     }
 
     function goToRAQ() {
