@@ -4,15 +4,20 @@
   box-shadow: 0 0 13px 1px dimgrey;
   border-bottom: 1px solid beige;
 
+  img {
+    width: 150px;
+    padding: 8px 0;
+  }
+
   p {
     margin: 0;
-    color: $regular-blue;
+    color: $secondary-color;
     font-size: 32px;
   }
 
   a {
     text-decoration: none;
-    color: $regular-blue;
+    color: $secondary-color;
   }
 
   ul {

@@ -1,16 +1,17 @@
 .vb-home {
   min-height: 80vh;
-  background: url('http://deluxe.mobilerocket.in/new-test/wp-content/uploads/2017/04/want39732-1GPDyg1465550922.jpg?1492373803737');
+  background: url('http://res.cloudinary.com/rajatvijay/image/upload/v1497291020/760x350-Winter2015_x7sev2.jpg');
   background-size: cover;
   padding-bottom: 8%;
 
   h1 {
     font-size: 60px;
+    font-weight: bold;
     color: white;
   }
 
   .md-button {
-    @include solid-inverted(#BC782B);
+    @include solid-inverted(#FFCC00);
     font-size: 24px;
     padding: 0.5% 2%;
   }

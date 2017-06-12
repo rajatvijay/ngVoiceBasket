@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$regular-font: 'Ubuntu', sans-serif ;
-$regular-blue: #0591BC;
+$regular-font: 'Open Sans', sans-serif;
+$secondary-color: #FFCC00;
 
 // Inverted Color border button mixin
 @mixin border-inverted ($color, $hoverColor: white) {

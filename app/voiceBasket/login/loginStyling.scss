@@ -4,7 +4,7 @@
   h2 {
     font-size: 28px;
     font-weight: 400;
-    color: $regular-blue;
+    color: $secondary-color;
   }
 
   form {
@@ -12,11 +12,11 @@
   }
 
   .md-button {
-    @include solid-inverted($regular-blue);
+    @include solid-inverted($secondary-color);
     font-size: 18px;
     padding: 0.5% 2%;
   }
   a {
-    color: $regular-blue;
+    color: $secondary-color;
   }
 }
