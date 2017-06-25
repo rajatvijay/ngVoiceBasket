@@ -4,7 +4,7 @@
     <!-- Type -->
     <md-input-container>
       <label for="type">Type</label>
-      <md-select id="type" ng-model="request.type">
+      <md-select id="type" ng-model="request.request.type">
         <md-option ng-repeat="type in types" ng-value="type">{{ type }}</md-option>
       </md-select>
     </md-input-container>
@@ -32,13 +32,13 @@
     </md-input-container>
 
     <!-- Name of the book -->
-    <md-input-container ng-if="request.type === 'Audio-books'">
+    <md-input-container ng-if="request.request.type === 'Audio-books'">
       <label for="bookName">Name of the book</label>
-      <input id="bookName" type="text" ng-model="request.bookName">
+      <input id="bookName" type="text" ng-model="request.request.bookName">
     </md-input-container>
 
     <!-- No of Characters -->
-    <div layout="column" ng-if="request.type === 'Commercial'">
+    <div layout="column" ng-if="request.request.type === 'Commercial'">
       <md-input-container>
         <label for="chars">No of Characters</label>
         <input id="chars" type="number" ng-model="charactersCount">
@@ -56,13 +56,13 @@
     </div>
 
     <!-- No of Messages -->
-    <md-input-container ng-if="request.type === 'IVR'">
+    <md-input-container ng-if="request.request.type === 'IVR'">
       <label for="messagesCount">No of Messages</label>
-      <input id="messagesCount" type="number" ng-model="request.messagesCount">
+      <input id="messagesCount" type="number" ng-model="request.request.messagesCount">
     </md-input-container>
 
     <!--&lt;!&ndash; Character Weightage &ndash;&gt;
-    <div layout="column" ng-if="request.type === 'Cartoon / Animation Videos'">
+    <div layout="column" ng-if="request.request.type === 'Cartoon / Animation Videos'">
       <p>Weightage</p>
       <md-input-container ng-repeat="num in range(charactersCount)">
         <label for="weight"></label>
@@ -73,19 +73,19 @@
     <!-- Duration -->
     <md-input-container>
       <label for="duration">Duration (mins)</label>
-      <input id="duration" type="number" ng-model="request.duration">
+      <input id="duration" type="number" ng-model="request.request.durationInMinutes">
     </md-input-container>
 
     <!-- Word Count -->
     <md-input-container>
       <label for="wordCount">No of Words</label>
-      <input id="wordCount" type="number" ng-model="request.wordCount">
+      <input id="wordCount" type="number" ng-model="request.request.wordCount">
     </md-input-container>
 
     <!-- Broadcast Type -->
-    <md-input-container ng-if="request.type === 'Commercial'">
+    <md-input-container ng-if="request.request.type === 'Commercial'">
       <label for="broadcast">Broadcast Type</label>
-      <md-select id="broadcast" ng-model="request.broadCastType">
+      <md-select id="broadcast" ng-model="request.request.broadcastType">
         <md-option ng-repeat="type in ['TV', 'Radio']" ng-value="type">{{ type }}</md-option>
       </md-select>
     </md-input-container>
@@ -93,19 +93,19 @@
     <!-- Script -->
     <md-input-container>
       <label for="scriptText">Copy/Paste Script</label>
-      <textarea id="scriptText" ng-model="request.scriptText"></textarea>
+      <textarea id="scriptText" ng-model="request.request.scriptText"></textarea>
     </md-input-container>
 
     <!-- Script Url -->
     <md-input-container>
       <label for="scriptUrl">Upload Script Url</label>
-      <input type="url" id="scriptUrl" ng-model="request.scriptUrl">
+      <input type="url" id="scriptUrl" ng-model="request.request.scriptUrl">
     </md-input-container>
 
     <!-- Notes -->
     <md-input-container>
       <label for="notes">ADD NOTES FOR ARTIST (DIRECTION, TIMINGS, PRONUNCIATION, VIDEO LINKS etc.)</label>
-      <textarea id="notes" ng-model="request.notes"></textarea>
+      <textarea id="notes" ng-model="request.request.notes"></textarea>
     </md-input-container>
 
     <md-input-container layout="row">

@@ -4,6 +4,7 @@
   function controllerFunction($scope, artistService) {
     $scope.selectedAudios = artistService.getArtistRequestPayload();
     $scope.request = {
+      request: {},
       characters: [],
       artistRequest: $scope.selectedAudios
     };
