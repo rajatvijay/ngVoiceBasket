@@ -23,7 +23,7 @@
       if (audios) {
         $scope.audios = [];
         $scope.selectedAudios = {};
-        audios.forEach(function (audio) {
+          audios.forEach(function (audio) {
           _.isMatch(audio.audioClip, selectedFilters) ? $scope.audios.push(audio) : null;
         });
       }
@@ -75,6 +75,8 @@
     }
 
     function goToRAQ() {
+      console.log("Inside method");
+      console.log($scope.selectedAudios);
       if (Object.keys($scope.selectedAudios).length === 0) {
         $scope.showToast('Please select at-least 1 sample', 'top');
       } else if (Object.keys($scope.selectedAudios).length > 3) {

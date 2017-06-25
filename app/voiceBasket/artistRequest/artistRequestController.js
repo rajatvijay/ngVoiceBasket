@@ -2,10 +2,11 @@
   app.controller('artistRequestController', ['$scope', 'artistService', controllerFunction]);
 
   function controllerFunction($scope, artistService) {
-    $scope.request = {
-      characters: []
-    };
     $scope.selectedAudios = artistService.getArtistRequestPayload();
+    $scope.request = {
+      characters: [],
+      artistRequest: $scope.selectedAudios
+    };
     $scope.types = [
       'Commercial',
       'Infomercials & Explainer Videos',
@@ -22,13 +23,21 @@
     //========================================//
 
     function range(number) {
-      console.log('Range called!')
-      console.log(_.range(parseInt(number)))
       return _.range(parseInt(number));
     }
 
     function submit() {
-      $scope.showToast('Your request has been recieved!');
+      console.log($scope.request);
+      artistService.submitRequest($scope.request).then(function (response) {
+        if (response.status) {
+          $scope.showToast('Your request has been received!');
+          $location.path('/dashboard');
+        } else {
+          $scope.showToast('Please try again!');
+        }
+      }).catch(function (error) {
+        $scope.showToast('Please try again!');
+      })
     }
   }
 })();

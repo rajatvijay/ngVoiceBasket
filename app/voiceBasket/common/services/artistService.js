@@ -15,6 +15,10 @@
       return api.get(endPoints.artistList);
     };
 
+    this.submitRequest = function (requestPayload) {
+      return api.post(endPoints.submitRequest, {data: requestPayload});
+    }
+
     this.parseSelectedAudios = function () {
       var selectedAudioIds = [];
       angular.forEach(this.selectedAudios, function (acceptanceBoolean, audioId) {
@@ -28,6 +32,7 @@
     this.getArtistRequestPayload = function () {
       var that = this;
       var audioIdList = that.parseSelectedAudios(that.selectedAudios);
+      console.log(that.audios);
       return that.audios.filter(function (audio) {
         return audioIdList.indexOf(audio.id) > -1;
       })

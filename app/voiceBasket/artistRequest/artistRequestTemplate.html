@@ -49,7 +49,7 @@
         <md-input-container ng-repeat="num in range(charactersCount)">
           <label for="charsAlloc">Character {{ num + 1 }}</label>
           <md-select id="charsAlloc" ng-model="request.characters[num]">
-            <md-option ng-repeat="audio in selectedAudios" ng-value="audio.id">{{ audio.artist.name }}</md-option>
+            <md-option ng-repeat="audio in selectedAudios" ng-value="audio">{{ audio.artist.name }}</md-option>
           </md-select>
         </md-input-container>
       </div>
