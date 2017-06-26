@@ -14,6 +14,7 @@
       accountService.getDashboardData().then(function (response) {
         if(response.status) {
           $scope.dashboardData = response.result;
+          console.log($scope.dashboardData);
         } else {
           $scope.showToast(response.message, 'top');
         }

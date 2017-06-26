@@ -1,0 +1,15 @@
+.vb-dashboard {
+  padding: 2%;
+
+  table {
+    border-collapse: collapse;
+    width: 40%;
+  }
+  td, th {
+    border: 1px solid grey;
+    padding: 2%;
+  }
+  th:first-child {
+    width: 45%;
+  }
+}
