@@ -22,4 +22,8 @@ app.service('currentUser',["session", "$rootScope", function (session, $rootScop
     return session.auth_token() ;
   };
 
+  this.getUserType = function() {
+    return session.auth_user_type() ;
+  };
+
 }]) ;

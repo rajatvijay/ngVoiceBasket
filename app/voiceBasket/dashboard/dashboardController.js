@@ -1,9 +1,10 @@
 (function () {
-  app.controller('dashboardController', ['$scope', 'accountService', controllerFunction]);
+  app.controller('dashboardController', ['$scope', 'accountService', 'currentUser', controllerFunction]);
 
-  function controllerFunction($scope, accountService) {
+  function controllerFunction($scope, accountService, currentUser) {
     $scope.dashboardData = null;
     $scope.updateStatus = updateStatus;
+    $scope.userType = currentUser.getUserType()
 
     //==================================//
 

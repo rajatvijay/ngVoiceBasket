@@ -32,6 +32,9 @@ ng.module('app').provider('session', [
           getNextStep: function () {
             return cache('next.step');
           },
+          auth_user_type: function () {
+            return cache('auth.user.type');
+          },
           purgeList: function(_cachedItems) {
             angular.forEach(_cachedItems, function (item) {
               cache.remove(item) ;

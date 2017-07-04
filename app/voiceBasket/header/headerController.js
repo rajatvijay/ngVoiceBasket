@@ -25,13 +25,13 @@
         }
       )
     } else {
-      console.log(currentUser.user());
+      var user = currentUser.user();
       $scope.menu.push(
         {
-          name: currentUser.user().user.name,
-          link: '/dashboard'
-        })
-      console.log($scope.menu);
+          name: user.name,
+          link: user.userType == 'artist' ? '/add-audio' : '/dashboard'
+        }
+      )
     }
   }
 })();

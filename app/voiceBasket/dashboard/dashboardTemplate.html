@@ -6,7 +6,9 @@
         <th>Date</th>
         <th>Accept</th>
         <th>Reject</th>
-        <th>Status</th>
+        <th ng-if="userType !== 'admin'">Status</th>
+        <th ng-if="userType === 'admin'">User Status</th>
+        <th ng-if="userType === 'admin'">Admin Status</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +20,7 @@
         <td><a href="#" ng-class="request.userStatus === null ? '' : 'vb-disabled'"
                ng-click="updateStatus($event, request.id, 'reject')">Decline</a></td>
         <td>{{ request.userStatus | uppercase }}</td>
+        <td ng-if="userType === 'admin'">{{ request.adminStatus | uppercase }}</td>
       </tr>
     </tbody>
   </table>

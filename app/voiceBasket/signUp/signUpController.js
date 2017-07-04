@@ -13,8 +13,9 @@
       accountService.register($scope.user).then(function (response) {
         if(response.status) {
           $scope.showToast('Sign Up successful', 'top');
-          currentUser.setUser(response.result);
+          currentUser.setUser(response.result.user);
           currentUser.setToken(response.result.sessionId);
+          currentUser.setUserType(response.result.user.userType);
           var path = session.getNextStep() === undefined ? '/dashboard' : session.getNextStep();
           session.purgeList(['next.step']);
           $location.path(path);
