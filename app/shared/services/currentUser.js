@@ -10,6 +10,10 @@ app.service('currentUser',["session", "$rootScope", function (session, $rootScop
     session.setUser(user);
   };
 
+  this.setUserType = function (userType) {
+    session.setUserType(userType);
+  }
+
   this.setToken = function (token) {
     session.setToken(token);
   };

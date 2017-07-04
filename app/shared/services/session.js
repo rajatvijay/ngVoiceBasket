@@ -14,6 +14,9 @@ ng.module('app').provider('session', [
           setUser: function(user) {
             cache('auth.user', user) ;
           },
+          setUserType: function (userType) {
+            cache('auth.user.type', userType);
+          },
           setToken: function(token) {
             cache('auth.token', token) ;
           },

@@ -12,9 +12,10 @@
       accountService.login($scope.user).then(function (response) {
         if (response.status) {
           $scope.showToast('Login Successful', 'top');
-          currentUser.setUser(response.result);
+          currentUser.setUser(response.result.user);
           currentUser.setToken(response.result.sessionId);
-          var path = session.getNextStep() === undefined ? '/dashboard' : session.getNextStep();
+          currentUser.setUserType(response.result.user.userType);
+          var path = getNextPageUrl(response.result.user.userType);
           session.purgeList(['next.step']);
           $location.path(path);
         } else {
@@ -24,6 +25,16 @@
         console.log(error);
         $scope.showToast('Please try again', 'top');
       });
+    }
+
+    function getNextPageUrl(userType) {
+      if (userType === 'admin') {
+        return '/dashboard';
+      } else if (userType === 'artist') {
+        // return '/add-audio';
+      } else {
+        return session.getNextStep() === undefined ? '/dashboard' : session.getNextStep();
+      }
     }
   }
 })();
