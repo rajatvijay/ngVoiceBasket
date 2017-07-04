@@ -41,7 +41,7 @@ ng.module('app').provider('session', [
             }) ;
           },
           clear: function() {
-            var cachedItems = ['auth.user', 'auth.token'] ;
+            var cachedItems = ['auth.user', 'auth.token', 'auth.user.type'] ;
             angular.forEach(cachedItems, function (item) {
               cache.remove(item) ;
             }) ;

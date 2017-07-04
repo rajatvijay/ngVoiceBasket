@@ -1,7 +1,8 @@
 (function () {
-  app.controller('headerController', ['$scope', 'currentUser', controllerFunction]);
+  app.controller('headerController', ['$scope', 'currentUser', 'session', '$location', controllerFunction]);
 
-  function controllerFunction($scope, currentUser) {
+  function controllerFunction($scope, currentUser, session, $location) {
+    $scope.callFn = callFn;
     $scope.menu = [
       {
         name: 'Home',
@@ -32,6 +33,25 @@
           link: user.userType == 'artist' ? '/add-audio' : '/dashboard'
         }
       )
+      $scope.menu.push(
+        {
+          name: 'Logout',
+          link: '#',
+          callback: logout
+        }
+      )
+    }
+
+    function logout() {
+      session.clear();
+      $location.path('/');
+    }
+
+    function callFn(link, Fn) {
+      if (link === '#') {
+        console.log(link, Fn);
+        Fn();
+      }
     }
   }
 })();

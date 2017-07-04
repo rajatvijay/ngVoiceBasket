@@ -4,5 +4,6 @@ app.constant('endPoints', {
   filters: 'artist/search/options',
   artistList: '/artist/audio/list',
   submitRequest: '/artist/request',
-  updateRequestStatus: '/account/update-status'
+  updateRequestStatus: '/account/update-status',
+  addAudio: '/artist/add/audio'
 });

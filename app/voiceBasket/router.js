@@ -61,6 +61,16 @@ app.config(['$routeProvider', '$locationProvider',
           }
         }
       })
+      .when('/add-audio', {
+        controller: 'voiceBasketBaseController',
+        templateUrl: '/voiceBasket/base.html',
+        title: 'Add Audio',
+        resolve: {
+          currentSectionTemplate: function () {
+            return 'addAudio/addAudioTemplate.html';
+          }
+        }
+      })
     $locationProvider.html5Mode({
       enabled: true
     });

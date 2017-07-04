@@ -17,6 +17,10 @@
 
     this.submitRequest = function (requestPayload) {
       return api.post(endPoints.submitRequest, {data: requestPayload});
+    };
+
+    this.addAudio = function (audioPayload) {
+      return api.post(endPoints.addAudio, {data: audioPayload});
     }
 
     this.parseSelectedAudios = function () {

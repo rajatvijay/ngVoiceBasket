@@ -1,0 +1,25 @@
+<div ng-controller="addAudioController" class="vb-audio" layout="column" layout-align="center center">
+  <h1>Add Audio</h1>
+  <!-- Search Artist -->
+  <div layout="row" layout-align="center center" layout-padding layout-margin class="vb-search-bar">
+    <md-input-container ng-repeat="prop in filtersArray | orderBy: 'key'">
+      <label for="filter" style="color: #000;">{{ prop.key | removeDoubleUnderscores | camelCaseToSpace | uppercase }}</label>
+      <md-select id="filter"
+                 ng-model="selectedFilter[renderOptionName('removeDoubleUnderscores', prop.key)]">
+        <md-option ng-value="filter" ng-repeat="filter in prop.val">{{ filter }}</md-option>
+      </md-select>
+    </md-input-container>
+
+  </div>
+
+  <md-input-container style="width: 25%;">
+    <label for="media-url">Audio Url</label>
+    <input type="text" id="media-url" ng-model="audio.url">
+  </md-input-container>
+  <md-input-container>
+    <md-button ng-click="addAudio(audio)">
+      Add
+    </md-button>
+  </md-input-container>
+
+</div>
