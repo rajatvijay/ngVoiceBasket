@@ -14,6 +14,10 @@
       return api.get(endPoints.dashboard);
     };
 
+    this.updateRequestStatus = function (payload) {
+      return api.put(endPoints.updateRequestStatus, {data: payload})
+    };
+
     // Collects the requests into a single entity
     // Required due to wrong DB structure
     this.renderArtistRequests = function (artistRequests) {

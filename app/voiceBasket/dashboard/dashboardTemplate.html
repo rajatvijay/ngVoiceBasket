@@ -6,14 +6,18 @@
         <th>Date</th>
         <th>Accept</th>
         <th>Reject</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="request in dashboardData">
         <td>{{ request.type }}</td>
         <td>{{ request.createdOn | date: 'shortDate' }}</td>
-        <td><a href="#" ng-click="acceptRequest(request.id)">Accept</a></td>
-        <td><a href="#" ng-click="rejectRequest(request.id)">Decline</a></td>
+        <td><a href="#" ng-class="request.userStatus === null ? '' : 'vb-disabled'"
+               ng-click="updateStatus($event, request.id, 'accept')">Accept</a></td>
+        <td><a href="#" ng-class="request.userStatus === null ? '' : 'vb-disabled'"
+               ng-click="updateStatus($event, request.id, 'reject')">Decline</a></td>
+        <td>{{ request.userStatus | uppercase }}</td>
       </tr>
     </tbody>
   </table>

@@ -12,4 +12,8 @@
   th:first-child {
     width: 45%;
   }
+
+  .vb-disabled {
+    pointer-events: none;
+  }
 }

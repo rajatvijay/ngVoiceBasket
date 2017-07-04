@@ -3,5 +3,6 @@ app.constant('endPoints', {
   dashboard: 'account/dashboard',
   filters: 'artist/search/options',
   artistList: '/artist/audio/list',
-  submitRequest: '/artist/request'
+  submitRequest: '/artist/request',
+  updateRequestStatus: '/account/update-status'
 });

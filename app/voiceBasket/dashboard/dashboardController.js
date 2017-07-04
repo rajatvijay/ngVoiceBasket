@@ -3,8 +3,7 @@
 
   function controllerFunction($scope, accountService) {
     $scope.dashboardData = null;
-    $scope.acceptRequest = acceptRequest;
-    $scope.rejectRequest = rejectRequest;
+    $scope.updateStatus = updateStatus;
 
     //==================================//
 
@@ -15,7 +14,7 @@
     function getDashboardData() {
       accountService.getDashboardData().then(function (response) {
         if(response.status) {
-          $scope.dashboardData = accountService.renderRequest(response.result.artistRequest);
+          $scope.dashboardData = accountService.renderArtistRequests(response.result.artistRequest);
         } else {
           $scope.showToast(response.message, 'top');
         }
@@ -25,12 +24,20 @@
       });
     }
 
-    function acceptRequest(requestId) {
-      console.log(requestId);
-    }
-
-    function rejectRequest(requestId) {
-      console.log(requestId);
+    function updateStatus(ev, requestId, user_response) {
+      ev.preventDefault();
+      var payload = {
+        id: requestId,
+        user_response: user_response
+      }
+      accountService.updateRequestStatus(payload).then(function (response) {
+        if(response.status) {
+          $scope.dashboardData = accountService.renderArtistRequests(response.result.artistRequest);
+          $scope.showToast(response.message, 'top');
+        }
+      }, function (error) {
+        $scope.showToast('Please try again later!');
+      });
     }
   }
 })();
