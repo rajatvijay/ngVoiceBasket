@@ -21,6 +21,15 @@
       <label for="password">Password</label>
       <input type="password" id="password" ng-model="user.password">
     </md-input-container>
+
+    <md-input-container>
+      <md-radio-group ng-model="user.userType">
+        <md-radio-button value="user" class="primary">Sign Up As A User</md-radio-button>
+        <md-radio-button value="artist">Sign Up As An Artist</md-radio-button>
+        <md-radio-button value="admin">Sign Up As An Admin</md-radio-button>
+      </md-radio-group>
+    </md-input-container>
+
     <md-input-container layout="row" layout-align="center center">
       <md-button ng-click="signUp()">
         Sign Up

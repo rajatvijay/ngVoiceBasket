@@ -2,7 +2,9 @@
   app.controller('signUpController', ['$scope', 'accountService', '$location', 'currentUser', 'session', controllerFunction]);
 
   function controllerFunction($scope, accountService, $location, currentUser, session) {
-    $scope.user = {};
+    $scope.user = {
+      userType: 'user'
+    };
     $scope.signUp = signUp;
 
     //==============================//
