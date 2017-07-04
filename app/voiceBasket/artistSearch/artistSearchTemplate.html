@@ -16,7 +16,6 @@
 
   <!-- Resulted Artists -->
   <div layout="column" layout-align="center center" class="vb-search-result">
-    {{ selectedAudios }}
     <md-checkbox ng-repeat="audio in audios" ng-model="selectedAudios[audio.id]">
       <div layout="column">
         <audio controls>
