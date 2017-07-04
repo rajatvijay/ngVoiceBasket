@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="request in dashboardData.artistRequest">
+      <tr ng-repeat="request in dashboardData">
         <td>{{ request.type }}</td>
         <td>{{ request.createdOn | date: 'shortDate' }}</td>
         <td><a href="#" ng-click="acceptRequest(request.id)">Accept</a></td>
