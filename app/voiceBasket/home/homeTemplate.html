@@ -1,6 +1,104 @@
-<div layout="column" class="vb-home" layout-align="end center">
-  <h1>Welcome to Voice Basket</h1>
+<div layout="column" class="vb-home">
+  <div layout="column" class="vb-home-header" layout-align="end center">
+    <h1>Welcome to Voice Basket</h1>
     <md-button ng-click="goTo('/search')">
       Book An Artist
     </md-button>
+  </div>
+  <div layout="row" class="vb-home-semi-overlay">
+    <md-card flex="25">
+      <h2>Blazing deals</h2>
+      <div layout="column">
+        <i class="fa fa-bolt" aria-hidden="true"></i>
+        <hr>
+        <p>
+          Get the best bang for your buck without sacrificing superior quality.
+        </p>
+        <md-button>
+          Learn More
+        </md-button>
+      </div>
+    </md-card>
+
+    <md-card flex="25">
+      <h2>Lavish features</h2>
+      <div layout="column">
+        <i class="fa fa-gift" aria-hidden="true"></i>
+        <hr>
+        <p>
+          We go the extra mile to provide clients the Best Features on the web
+        </p>
+        <md-button>
+          Learn More
+        </md-button>
+      </div>
+    </md-card>
+
+    <md-card flex="25">
+      <h2>Why Choose Us</h2>
+      <div layout="column">
+        <i class="fa fa-bullseye" aria-hidden="true"></i>
+        <hr>
+        <p>
+          We make sure you enjoy the service experience from start to finish
+        </p>
+        <md-button>
+          Learn More
+        </md-button>
+      </div>
+    </md-card>
+
+    <md-card flex="25">
+      <h2>Working process</h2>
+      <div layout="column">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+        <hr>
+        <p>
+          Our workflow model is simple, secure and efficient
+        </p>
+        <md-button>
+          Learn More
+        </md-button>
+      </div>
+    </md-card>
+  </div>
+  <div class="vb-home-about" layout="column">
+    <h1>Welcome To Voice Basket</h1>
+    <h4>We embody excellence and speed</h4>
+    <p>With years of experience and great quality output under our belt, we ensure only the best services for our
+      clients from our passionate and dedicated team of experts.</p>
+    <md-button>
+      About Us
+    </md-button>
+  </div>
+  <div class="vb-home-feedback" layout="row">
+    <md-card flex="50">
+      <i class="fa fa-comments" aria-hidden="true"></i>
+      <h2>Featured Client</h2>
+      <p>We Have The Trust Of Major League Companies Worldwide</p>
+      <md-button>See for yourself</md-button>
+    </md-card>
+    <md-card flex="50">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <h2>Leave a Feedback</h2>
+      <p>Tell Us About Your Experience And We’ll Take It To Heart</p>
+      <md-button>Talk to us</md-button>
+    </md-card>
+  </div>
+  <div class="vb-home-bottom-cta" layout="column">
+    <h1>We are in the long haul</h1>
+    <h3>Talk to us and let’s start this strong partnership. We’ll cater to your needs.</h3>
+
+    <div layout="row">
+      <md-button flex="33" ng-href="/search">
+        <!--<i style="color: #0e90d2;" class="fa fa-sticky-note" aria-hidden="true"></i>-->
+        Free Qoute</md-button>
+      <md-button flex="33" ng-href="/login">
+        <!--<i style="color: red;" class="fa fa-plane" aria-hidden="true"></i>-->
+        Upload Now</md-button>
+      <md-button flex="33">
+        <!--<i class="fa fa-volume-control-phone" style="color: #27cc6a;" aria-hidden="true"></i>-->
+        Contact Us</md-button>
+    </div>
+  </div>
 </div>
