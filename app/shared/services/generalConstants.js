@@ -1,1 +1,1 @@
-ng.module('app').constant('BASE_URL', '107.170.11.184');
+ng.module('app').constant('BASE_URL', '138.197.43.41');

@@ -58,10 +58,12 @@ var baseFunction = function(_file){
 
   var _path = _file.path ;
 
-  if(_path.search(sharedFile) > -1)
+  if(_path.search(sharedFile) > -1) {
     return _path.split("tmpl/")[1] || _path.split("tmpl\\")[1] ;
-  else
-    return _path.split("voiceBasket/app")[1] || _path.split("voiceBasket\\app")[1] ;
+  }
+  else {
+    return _path.split("ngVoiceBasket/app")[1] || _path.split("ngVoiceBasket\\app")[1];
+  }
 } ;
 
 var getAppTemplateName = function () {
